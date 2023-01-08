@@ -5,18 +5,18 @@ const initialValue = {
   count: 0,
 };
 
-export const increment = () => ({
+export const Increment = () => ({
   type: INCREMENT,
 });
-
-export const decrement = () => ({
+export const Decrement = () => ({
   type: DECREMENT,
 });
-export const incrementByValue = (value) => ({
+export const IncrementByValue = (value) => ({
   type: INCREMENTBYVALUE,
   payload: value,
 });
-function counterReducer(state = initialValue, actions) {
+
+const counterReducer = (state = initialValue, actions) => {
   switch (actions.type) {
     case INCREMENT:
       return {
@@ -31,11 +31,11 @@ function counterReducer(state = initialValue, actions) {
     case INCREMENTBYVALUE:
       return {
         ...state,
-        count: state.count + actions.payload + 10,
+        count: state.count + actions.payload,
       };
     default:
       return state;
   }
-}
+};
 
 export default counterReducer;

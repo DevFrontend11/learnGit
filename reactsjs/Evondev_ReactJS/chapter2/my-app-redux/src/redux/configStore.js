@@ -5,6 +5,4 @@ const reducer = combineReducers({
   counter: counterReducer,
 });
 
-const store = createStore(reducer);
-
-export default store;
+export const store = createStore(reducer);
