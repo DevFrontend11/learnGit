@@ -1,12 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Counter from "./components/Counter";
 
 function App() {
-  const [count, setCount] = React.useState(0);
+  const count = useSelector((state) => state.counter.count);
   return (
     <div>
       <p>App counter: {count}</p>
-      <Counter count={count} setCount={setCount}></Counter>
+      <Counter></Counter>
     </div>
   );
 }
