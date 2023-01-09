@@ -2,19 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../redux-toolkit/globalSlice";
 import useDarkMode from "../hooks/useDarkMode";
+import Sidebar from "../menu/Sidebar";
 
 const Card = () => {
-  const [darkMode, setDarkMode] = useDarkMode();
-  console.log("🚀 ~ file: Card.js:8 ~ Card ~ darkMode", darkMode);
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(toggleDarkMode(darkMode));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  const handleDarkModeOptions = () => {
-    setDarkMode(!darkMode);
-    dispatch(toggleDarkMode(!darkMode));
-  };
   return (
     <div className="w-[400px] bg-white p-3 rounded-2xl shadow dark:bg-slate-900">
       <div className="card-image h-[250px] mb-5">
@@ -41,15 +31,7 @@ const Card = () => {
           Explore
         </a>
       </div>
-
-      <div className="w-full text-center">
-        <button
-          className="p-2 border border-gray-300 mt-[20px] rounded-full bg-gray-200"
-          onClick={handleDarkModeOptions}
-        >
-          Toggle DarkMode
-        </button>
-      </div>
+      <Sidebar></Sidebar>
     </div>
   );
 };

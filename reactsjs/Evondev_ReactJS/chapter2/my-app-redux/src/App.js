@@ -1,11 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import Card from "./components/cards/Card";
+import ButtonToggle from "./components/button/ButtonToggle";
+import Sidebar from "./components/menu/Sidebar";
 
 function App() {
   return (
     <div>
-      <Card></Card>
+      <Sidebar></Sidebar>
+      <ButtonToggle></ButtonToggle>
     </div>
   );
 }

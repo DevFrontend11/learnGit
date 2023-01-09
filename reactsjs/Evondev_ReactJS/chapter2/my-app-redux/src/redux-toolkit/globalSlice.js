@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const items = JSON.parse(localStorage.getItem("showSidebar2"));
 const initialState = {
   darkMode: false,
+  showSidebar: items,
 };
 
 const globalSlice = createSlice({
@@ -12,8 +13,12 @@ const globalSlice = createSlice({
       ...state,
       darkMode: action.payload,
     }),
+    toggleSidebar: (state, action) => ({
+      ...state,
+      showSidebar: action.payload,
+    }),
   },
 });
 
-export const { toggleDarkMode } = globalSlice.actions;
+export const { toggleDarkMode, toggleSidebar } = globalSlice.actions;
 export default globalSlice.reducer;
