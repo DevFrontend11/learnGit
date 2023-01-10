@@ -5,6 +5,10 @@ import { toggleSidebar } from "../../redux-toolkit/globalSlice";
 const ButtonToggle = () => {
   const dispatch = useDispatch();
   const { showSidebar } = useSelector((state) => state.globalMode);
+  console.log(
+    "🚀 ~ file: ButtonToggle.js:8 ~ ButtonToggle ~ showSidebar",
+    showSidebar
+  );
   React.useEffect(() => {
     localStorage.setItem("showSidebar2", JSON.stringify(showSidebar));
   }, [showSidebar]);
