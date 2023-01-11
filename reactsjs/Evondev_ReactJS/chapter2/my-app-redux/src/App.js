@@ -1,14 +1,22 @@
 import React from "react";
-import ButtonToggle from "./components/button/ButtonToggle";
-import Sidebar from "./components/menu/Sidebar";
-
 function App() {
-  return (
-    <div>
-      <Sidebar></Sidebar>
-      <ButtonToggle></ButtonToggle>
-    </div>
-  );
+  React.useEffect(() => {
+    function* demoGenerator() {
+      let id = 1;
+      while (true) {
+        yield id;
+        id += 1;
+      }
+    }
+    const gen = demoGenerator();
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.return(2));
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.next());
+  }, []);
+  return <div></div>;
 }
 
 export default App;
