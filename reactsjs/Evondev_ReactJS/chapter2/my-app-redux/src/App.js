@@ -1,22 +1,11 @@
 import React from "react";
+import HackerNews from "./components/getData/HackerNews";
 function App() {
-  React.useEffect(() => {
-    function* demoGenerator() {
-      let id = 1;
-      while (true) {
-        yield id;
-        id += 1;
-      }
-    }
-    const gen = demoGenerator();
-    console.log(gen.next());
-    console.log(gen.next());
-    console.log(gen.return(2));
-    console.log(gen.next());
-    console.log(gen.next());
-    console.log(gen.next());
-  }, []);
-  return <div></div>;
+  return (
+    <div>
+      <HackerNews></HackerNews>
+    </div>
+  );
 }
 
 export default App;

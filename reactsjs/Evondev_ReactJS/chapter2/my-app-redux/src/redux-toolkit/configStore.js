@@ -22,7 +22,7 @@ const store = configureStore({
 store.subscribe(() => {
   console.log("current state: ", store.getState().counter.count);
 });
-store.dispatch(incrementByValue(3));
-store.dispatch(incrementByValue(7));
-store.dispatch(incrementByValue(8));
+// store.dispatch(incrementByValue(3));
+// store.dispatch(incrementByValue(7));
+// store.dispatch(incrementByValue(8));
 export default store;
