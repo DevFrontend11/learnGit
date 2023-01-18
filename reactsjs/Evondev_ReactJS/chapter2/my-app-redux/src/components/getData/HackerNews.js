@@ -1,6 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getNews, setNews, setQuery } from "../sagas/news/newSlice";
+import {
+  getNews,
+  otherAction,
+  setNews,
+  setQuery,
+} from "../sagas/news/newSlice";
 import { debounce } from "lodash";
 
 const HackerNews = () => {
@@ -14,6 +19,9 @@ const HackerNews = () => {
   const handleChangeValue = debounce((e) => {
     dispatch(setQuery(e.target.value));
   }, 500);
+  const handleUpdateLoading = () => {
+    dispatch(otherAction(false));
+  };
   return (
     <div className="w-2/4 p-5 mx-auto mt-5 mb-5 bg-white rounded-lg shadow-md">
       <div className="flex mb-5 gap-x-5">
@@ -31,6 +39,12 @@ const HackerNews = () => {
           className="flex-shrink-0 p-5 font-semibold text-white bg-blue-500 rounded-md"
         >
           Fetching
+        </button>
+        <button
+          className="p-2 text-blue-500 border border-blue-500 rounded-md"
+          onClick={handleUpdateLoading}
+        >
+          extraReducers
         </button>
       </div>
       {loading && (
