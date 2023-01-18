@@ -10,6 +10,7 @@ export default function* handleGetNews({ payload, action }) {
     const response = yield call(requestGetNews, query);
     console.log(response);
     const { hits } = response.data;
+    //update data in store
     yield put(setLoading(false));
     yield put(setNews(hits));
   } catch (error) {
