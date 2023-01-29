@@ -7,20 +7,29 @@ import {
   setQuery,
 } from "../sagas/news/newSlice";
 import { debounce } from "lodash";
-
+import {
+  handleFetchNews,
+  setLoading,
+  setLoadingThunk,
+  setQuerySearch,
+} from "../redux-thunk/newSlice";
 const HackerNews = () => {
   const { hits, loading, errorMessage, query } = useSelector(
     (state) => state.news
   );
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(getNews(query));
+    // dispatch(getNews(query));
+    dispatch(handleFetchNews(query));
   }, [dispatch, query]);
   const handleChangeValue = debounce((e) => {
-    dispatch(setQuery(e.target.value));
+    // dispatch(setQuery(e.target.value));
+    dispatch(setQuerySearch(e.target.value));
   }, 500);
   const handleUpdateLoading = () => {
-    dispatch(otherAction(false));
+    // dispatch(otherAction(false));
+    // dispatch(setLoading(true));
+    dispatch(setLoadingThunk(true));
   };
   return (
     <div className="w-2/4 p-5 mx-auto mt-5 mb-5 bg-white rounded-lg shadow-md">
