@@ -1,10 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Firebase from "./component/Firebase";
 
 function App() {
   return (
     <div className="App">
-      <Firebase></Firebase>
+      <Routes>
+        <Route path="/" element={<Firebase></Firebase>}></Route>
+      </Routes>
     </div>
   );
 }
