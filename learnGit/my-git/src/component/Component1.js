@@ -1,7 +1,8 @@
 import React from "react";
 
 const Component1 = () => {
-  return <div>Tran van dat</div>;
+  //Không ở đây phải là gì gì đó....
+  return <div>Lê Văn Dũng</div>;
 };
 
 export default Component1;
